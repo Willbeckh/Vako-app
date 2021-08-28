@@ -1,1 +1,1 @@
-web: python db upgrade; gunicorn blog:app
+web: python db upgrade; gunicorn blog:blog

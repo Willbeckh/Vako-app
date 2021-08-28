@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div id="home-page">
+        <div id="home-content">
+            {% if current_user.is_authenticated %}
+                <h2>Hello, {{ current_user.username }}</h2>
+                <p>Tupige vako!</p>
+            {% else %}
+                <h2>Hello, Welcome to Vako.</h2>
+                <p>Tupige vako!</p>
+            {% endif %}
+            <p>
+                Vako is a short story space designed for you and me, drop us a quote or a joke, we love that!
+            </p>
+            <em>Me as the creator I'd love to here from you, Get in touch <a href="https://twitter.com/billyndirangu">Twitter</a></em>
+        </div>      
+    </div>
+{% endblock %}

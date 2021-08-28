@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+    <form class="form-group new-post" action="" method="post">
+        <h2>Hi, {{ current_user.username }}</h2>
+        <legend>{{ legend }}</legend>
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.title.label(class="form-label") }} <br>
+            {{ form.title(class="form-control", size=20) }}
+            {% for error in form.title.errors %}
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.body.label(class="form-label") }} <br>
+            {{ form.body(class="form-control", size=200) }}
+            {% for error in form.body.errors %}
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </div>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<div id="flex-container">
+    {% for post in posts %}
+        <div id="flex-item">
+            <h4 class="post-author">{{ post.author.username }}</h4>
+            <p class="post-title"><a href="{{ url_for('post', post_id=post.id)}}">{{ post.title }}</a></p>
+            <p class="post-body">{{ post.body }}</p>
+            <em> {{ post.timestamp.strftime('%Y-%m-%d') }}</em>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

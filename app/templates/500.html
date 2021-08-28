@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <style>
+        h1, p{
+            text-align: center;
+        }
+    </style>
+    <h1>An internal error has occurred!</h1>
+    <p>Sorry for the inconvinience, the Administrator has been notified.</p>
+    <p><a href="{{ url_for('index') }}">Back</a></p>
+{% endblock %}

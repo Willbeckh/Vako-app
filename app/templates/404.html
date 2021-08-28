@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <style>
+        h1, p {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+    <div id="error">
+        <h1>File Not Found! 404 error</h1>
+        <p><a href="{{ url_for('index') }}">Back</a></p>
+    </div>
+{% endblock %}

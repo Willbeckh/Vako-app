@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="single-post-body">
+    <p class="post-title"><a href="{{ url_for('post', post_id=post.id)}}">{{ post.title }}</a></p>
+    <b>author: {{ post.author.username }}</b></p>
+    <p>{{ post.body }}</p>
+    <em>published on: {{ post.timestamp.strftime('%Y-%m-%d') }}</em>
+    {% if post.author == current_user %}
+      <a href="{{ url_for('update_post', post_id=post.id) }}">Update post</a>
+      <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
+    {% endif %}
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModalLabel">Confirm delete</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <form action="{{ url_for('delete_post', post_id=post.id) }}" method="POST">
+              <input class="btn btn-danger" type="submit" value="Delete">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

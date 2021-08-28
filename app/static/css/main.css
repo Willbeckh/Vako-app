@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgba(55, 196, 252, 0.993);
+    font-family: 'Monteserrat', sans-serif;
+    padding: 8px;
+}
+
+nav a{
+    text-decoration: none;
+    flex-basis: 10%;
+    text-align: center;
+    color: #000;
+    margin: 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+nav a:hover{
+    color: #1506e4;
+}
+
+.logo {
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: auto;
+    color: #f1f1f1;
+    margin-left: 50px;
+    font-family: 'Monteserrat', sans-serif;
+}
+
+/* HOME PAGE SECTION */
+#home-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    background-image: url('../images/home_bg.jpg');
+    background-size:cover;
+    background-position: center;
+    height: 90vh;
+}
+
+#home-content h2 {
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+#home-content p {
+    font-size: 2rem;
+}
+
+#home-content {
+    font-family: 'Poppins', Arial, Helvetica;
+    width: 80%;
+    color: rgba(55, 196, 252, 0.993);
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(22, 22, 22, 0.815);
+    padding: 10px;
+    margin-top: 20px;
+}
+
+/* POSTS DISPLAY SECTION */
+#flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    
+}
+
+#flex-item {
+    border: 1px solid saddlebrown;
+    border-radius: 10px;
+    box-shadow: rgba(131, 128, 128, 0.897) 1px 1px;
+    padding: 8px;
+    width: 50%;
+    margin: 10px; 
+}
+
+#flex-item .post-author {
+    font-family: 'Lato', 'Courier New', Courier, monospace;
+    font-size: 2em;
+}
+
+.post-title a {
+    font-size: medium;
+    font-weight: 600;
+    text-decoration: underline;
+    color: #000;
+}
+
+.post-title a:hover{
+    color: #1506e4;
+}
+.post-body {
+    font-weight: 500;
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+}
+
+em{
+    font-family: monospace;
+    font-size: .8em;
+}
+
+.personal-posts {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid #000;
+    box-shadow: 2px 2px gray;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+
+#flex-item .post-title .post-body {
+    font-family: 'Roboto',  Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+/* VIEWING SINGLE POST */
+.single-post-body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 500px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+
+/* PROFILE card */
+#profile-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #0088a9;
+    border-radius: 8px;
+    justify-content: center;
+    width: 50%;
+    margin: auto;
+    margin-top: 12px;
+    padding: 12px;
+}
+
+.profile-detail {
+    text-align: center;
+}
+
+.profile-detail a {
+    text-decoration: none;
+    background-color: #16f1dfe7;
+    color: #000;
+    border-radius: 6px;
+    padding: 5px;
+}
+
+
+.round-img {
+    border-radius: 60%;
+    width: 120px;
+    height: 120px;
+}
+
+
+/* FORM BOX */
+.form-box {
+    display: flex;
+    height: 500px;
+    width: 600px;
+    border-radius: 8px;
+    box-shadow: 2px 2px rgba(41, 41, 41, 0.568);
+    margin: auto;
+    margin-top: 20px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+    width: 100%;
+    background-color: rgba(236, 230, 230, 0.932);
+    background-size:cover;
+    background-position: center;
+}
+
+
+/* EdIT POSTS */
+.new-post {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 8px;
+    width: 500px;
+    background-color: #0088a9;
+    box-shadow: 2px 2px rgba(41, 41, 41, 0.568);
+    margin: auto;
+    margin-top: 20px;
+    padding: 16px;
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 800px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav a{
+        flex-basis: 6%;
+        margin: 2px;
+        border-radius: 4px;
+        text-transform: uppercase;
+    }
+
+    .home-content {
+        width: 60%;
+        margin-top: 10px;
+    }
+
+    #home-content h2 {
+        font-size: 1rem;
+        font-weight: 400;
+    }
+    
+    #home-content p {
+        font-size: 1rem;
+    }
+    
+}

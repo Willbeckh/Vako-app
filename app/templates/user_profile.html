@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div id="profile-card">
+        <div class="profile-detail">
+            <img class="round-img" src="../static/profile_pics/default.jpg" alt="profile avatar">
+            <h1>{{ user.username }}</h1>
+            <p>email: {{ user.email }}</p>
+            {% if user.last_seen %}<p>Last seen on: {{ user.last_seen.strftime("%m/%d/%Y, %H:%M:%S") }}</p>{% endif %}
+            {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
+
+            <span class="btn">
+                {% if user == current_user %}
+                <a href="{{ url_for('edit_profile') }}">Edit profile</a>
+                <a href="{{ url_for('upload_post') }}">Add Post</a>
+                {% endif %}
+            </span>
+        </div> 
+        <h4>My Posts</h4>       
+        <div class="personal-posts">
+            {% for post in posts %}
+                {% if post.author == current_user  %}
+                    <div>
+                        <p class="post-title"><a href="{{ url_for('post', post_id=post.id)}}">{{ post.title }}</a></p>
+                        <p>{{ post.author.username }}</p>
+                        <p>{{ post.body }}</p>
+                        <em>published on: {{ post.timestamp.strftime('%Y-%m-%d') }}</em>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>   
+    </div>
+{% endblock %}

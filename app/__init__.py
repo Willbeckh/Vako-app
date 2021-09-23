@@ -1,4 +1,3 @@
-import os
 from flask import Flask
 from config import Config
 from flask_sqlalchemy import SQLAlchemy
@@ -12,6 +11,6 @@ migrate = Migrate(app, db)
 
 #flask login
 login = LoginManager(app)
-login.login_view = 'login' # tells Flask-login of the view fn that handles login
+login.login_view = 'login' #tells Flask-login of the view fn that handles login
 
 from app import routes, models, errors

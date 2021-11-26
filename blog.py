@@ -10,5 +10,5 @@ def make_shell_cotext():
     run: `flask shell` in terminal to view and reference app """
   return {'db': db, 'User': User, 'Post': Post}
 
-if __name__ == '__main__':
-  app.run()
+# if __name__ == '__main__':
+#   app.run()
